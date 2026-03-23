@@ -18,7 +18,7 @@ jobs:
 
       - name: Fetch latest versions
         run: |
-          VERSION=$(git ls-remote --tags https://git.busybox.net/busybox/ \
+          VERSION=$(git ls-remote --tags https://github.com/mirror/busybox \
             | awk -F/ '!/[{}]/ {gsub(/_/, "."); print $3}' \
             | sort -V \
             | tail -1)
