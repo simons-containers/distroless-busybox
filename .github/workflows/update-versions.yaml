@@ -23,6 +23,7 @@ jobs:
             | sort -V \
             | tail -1)
 
+          set -u
           yq -i ".busybox= \"$VERSION\"" versions.yaml
 
       - name: Create Pull Request
