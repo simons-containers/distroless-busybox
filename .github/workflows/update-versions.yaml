@@ -27,7 +27,8 @@ jobs:
               | awk -F/ '!/[{}]/ {gsub(/_/, "."); print $3}' \
               | sort -V \
               | tail -1)
-  
+
+            : ${VERSION:?}
             yq -i ".busybox= \"$VERSION\"" versions.yaml
             git diff versions.yaml
 
