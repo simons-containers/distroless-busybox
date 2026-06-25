@@ -1,3 +1,7 @@
+![Latest](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/latest_tag?ignore=latest,sha256*&label=latest)  
+![Size](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/size?tag=latest)  
+![Tags](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/tags?ignore=latest,sha256*)  
+
 # Distroless BusyBox container
 
 Bare-bones BusyBox only container image.
