@@ -1,6 +1,6 @@
-![Latest](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/latest_tag?ignore=latest,sha256*&label=latest)  
+[![Latest](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/latest_tag?ignore=latest,sha256*&label=latest)  
 ![Size](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/size?tag=latest)  
-![Tags](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/tags?ignore=latest,sha256*)  
+![Tags](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/tags?ignore=latest,sha256*)](https://github.com/simons-containers/distroless-busybox/pkgs/container/distroless-busybox)
 
 # Distroless BusyBox container
 
