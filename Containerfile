@@ -1,7 +1,7 @@
 FROM archlinux:base-devel-20260308.0.497099 AS builder
 
 ARG BUSYBOX_VERSION
-ARG BUSYBOX_SOURCE=https://busybox.net/downloads/busybox-${BUSYBOX_VERSION}.tar.bz2
+ARG BUSYBOX_SOURCE
 
 WORKDIR /build/busybox
 RUN curl --silent --show-error --location --output busybox.tar.bz2 \
