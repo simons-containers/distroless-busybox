@@ -1,0 +1,9 @@
+{
+  "busybox": {
+    "version": "1.37.0",
+    "purl": "pkg:generic/busybox",
+    "source": {
+        "url_pattern": "https://busybox.net/downloads/busybox-{version}.tar.bz2"
+    }
+  }
+}

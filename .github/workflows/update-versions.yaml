@@ -23,15 +23,20 @@ jobs:
           timeout_minutes: 10
           command: |
             set -uo pipefail
-            VERSION=$(git ls-remote --tags https://git.busybox.net/busybox/ \
-              | awk -F/ '!/[{}]/ {gsub(/_/, "."); print $3}' \
-              | sort -V \
-              | tail -1)
+            BUSYBOX=$(git ls-remote --tags https://git.busybox.net/busybox/ \
+              | awk -F/ '/[0-9_]+$/ {gsub("_", "."); print $3}' 
+              | sort -V | tail -1)
 
-            : ${VERSION:?}
-            yq -i ".busybox= \"$VERSION\"" versions.yaml
-            git diff versions.yaml
+            : ${BUSYBOX:?}
+            
+            jq \
+              --arg busybox "$BUSYBOX" \
+              '
+                .busybox.version = $busybox
+              ' sources.json > tmp.json && mv tmp.json sources.json
 
+            git diff sources.json
+            
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
