@@ -11,7 +11,8 @@ RUN curl --silent --show-error --location --output busybox.tar.bz2 \
     && make defconfig \
     && sed -i 's/# CONFIG_STATIC is not set/CONFIG_STATIC=y/' .config \
     && sed -i 's/^CONFIG_TC=y$/# CONFIG_TC is not set/' .config \
-    && make
+    && make \
+    && chmod 07055 busybox
 
 FROM scratch
 
@@ -25,7 +26,6 @@ COPY profile /etc/profile
 ENV PATH=/usr/bin
 RUN ["busybox", "--install", "-s", "/usr/bin"]
 RUN ["busybox", "ln", "-s", "usr/bin", "/bin"]
-RUN ["busybox", "chmod", "4755", "/usr/bin/busybox"]
 
 ENTRYPOINT ["/usr/bin/busybox"]
 CMD ["ash", "-l"]
