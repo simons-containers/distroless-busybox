@@ -1,6 +1,14 @@
-[![Latest](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/latest_tag?ignore=latest,sha256*&label=latest)  
-![Size](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/size?tag=latest)  
-![Tags](https://ghcr-badge.egpl.dev/simons-containers/distroless-busybox/tags?ignore=latest,sha256*)](https://github.com/simons-containers/distroless-busybox/pkgs/container/distroless-busybox)
+[![Current Version](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/release.svg)](https://github.com/simons-containers/distroless-busybox/pkgs/container/distroless-busybox)
+[![Tags](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/tags.svg)](https://github.com/simons-containers/distroless-busybox/pkgs/container/distroless-busybox)  
+![Current Size](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/size.svg)
+![Wasted Size](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/wasted.svg)
+![Efficiency](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/efficiency.svg)  
+![Critical](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/critical.svg)
+![High](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/high.svg)
+![Medium](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/medium.svg)
+![Low](https://raw.githubusercontent.com/simons-containers/distroless-busybox/badges/.badges/main/low.svg)  
+[![status](https://github.com/simons-containers/distroless-busybox/actions/workflows/deploy.yaml/badge.svg)](https://github.com/simons-containers/distroless-busybox/actions/workflows/deploy.yaml)
+[![status](https://github.com/simons-containers/distroless-busybox/actions/workflows/update-versions.yaml/badge.svg)](https://github.com/simons-containers/distroless-busybox/actions/workflows/update-versions.yaml)
 
 # Distroless BusyBox container
 
@@ -14,20 +22,6 @@ Example:
 
 ```bash
 docker run -it --rm ghcr.io/simons-containers/distroless-busybox:latest whoami
-```
-
-## Building
-
-| Arg | Description |
-|---|---|
-| `BUSYBOX_VERSION` | Version of BusyBox to use
-
-Build container using build-args from versions.yaml:
-
-```bash
-docker build -t \
-  distroless-busybox:$(yq -r .busybox versions.yaml) \
-  $(yq -r 'to_entries | .[] | "--build-arg \(.key | ascii_upcase)_VERSION=\(.value)"' versions.yaml) -f Containerfile .
 ```
 
 ## License
